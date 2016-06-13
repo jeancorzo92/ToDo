@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "56896087033",
+    "firebase_url": "https://jctodoapp-6ab99.firebaseio.com",
+    "project_id": "jctodoapp-6ab99",
+    "storage_bucket": "jctodoapp-6ab99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56896087033:android:feb3c1a659768766",
+        "android_client_info": {
+          "package_name": "com.japps.labs.todo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56896087033-sl4hha1b9hmdb004giaaivk5g031gkod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxvMUzmlIRAeyXGa_QnPWDRStP2IjhVJw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56896087033:android:87fcb66cc6ca320a",
+        "android_client_info": {
+          "package_name": "com.google.firebase.quickstart.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56896087033-sl4hha1b9hmdb004giaaivk5g031gkod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxvMUzmlIRAeyXGa_QnPWDRStP2IjhVJw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
