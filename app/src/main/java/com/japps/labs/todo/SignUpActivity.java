@@ -17,6 +17,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.*;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -25,8 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected EditText emailEditText;
     protected Button signUpButton;
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton = (Button) findViewById(R.id.signupButton);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
                 email = email.trim();
 
                 // signup
+                final String finalEmail = email;
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -70,6 +76,9 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
 
                                 Toast.makeText(SignUpActivity.this, "Signed in successfully!", Toast.LENGTH_SHORT).show();
+                                Map<String, Object> map = new HashMap<String, Object>();
+                                map.put("email", finalEmail);
+                                mDatabase.child("users").child(mAuth.getCurrentUser().getUid()).setValue(map);
                                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

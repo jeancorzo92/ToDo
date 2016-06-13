@@ -83,10 +83,6 @@ public class LoginActivity extends AppCompatActivity {
                                     dialog.show();
                                 }
 
-                                Map<String, Object> map = new HashMap<String, Object>();
-                                map.put("email", email);
-                                mDatabase.child("users").child(mAuth.getCurrentUser().getUid()).setValue(map);
-
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
